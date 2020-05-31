@@ -1,27 +1,25 @@
 //BUBBLE SORT
 #include <stdio.h>
-
-void swap(int *xp, int *yp)
+#include<stdlib.h>
+void swap(int *x, int *y)
 {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
-// A function to implement bubble sort
-void bubbleSort(int arr[], int n)
+void bubblesort(int arr[], int n)
 {
    int i, j;
    for (i = 0; i < n-1; i++)
-
-       // Last i elements are already in place
+   {
        for (j = 0; j < n-i-1; j++)
            if (arr[j] > arr[j+1])
               swap(&arr[j], &arr[j+1]);
 }
+}
 
-/* Function to print an array */
-void printArray(int arr[], int size)
+void print(int arr[], int size)
 {
     int i;
     for (i=0; i < size; i++)
@@ -29,7 +27,6 @@ void printArray(int arr[], int size)
     printf("\n");
 }
 
-// Driver program to test above functions
 int main()
 {int arr[1000];
 int n = sizeof(arr)/sizeof(arr[0]);
@@ -38,8 +35,8 @@ for(int i=0;i<n;i++)
 {
     scanf("%d",&arr[i]);
 }
-    bubbleSort(arr, n);
+    bubblesort(arr, n);
     printf("Sorted array: \n");
-    printArray(arr, n);
+    print(arr, n);
     return 0;
 }
